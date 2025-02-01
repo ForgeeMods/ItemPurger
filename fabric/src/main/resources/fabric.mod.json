@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "itempurger",
+  "version": "${version}",
+  "name": "ItemPurger",
+  "description": "A simple light-weight minecraft mod for item clearing to help prevent unneeded lag!",
+  "authors": [
+    "ImagineForgee"
+  ],
+  "contact": {
+    "homepage": ""
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/itempurger/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "com.github.ImagineForgee.ItemPurger.fabric.ItemPurgerFabric"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": "~1.19.2",
+    "java": ">=17",
+    "architectury": ">=6.6.92",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "quilted_fabric_api": "*"
+  }
+}
