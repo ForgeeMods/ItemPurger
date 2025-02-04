@@ -1,8 +1,8 @@
-package com.github.ImagineForgee.ItemPurger.Config;
+package com.github.ImagineForgee.ItemPurger.Common.Config;
 
 import com.electronwill.nightconfig.core.file.FileConfig;
-import com.github.ImagineForgee.ItemPurger.ItemPurger;
-import com.github.ImagineForgee.ItemPurger.ItemPurgerUtils;
+import com.github.ImagineForgee.ItemPurger.Common.ItemPurger;
+import com.github.ImagineForgee.ItemPurger.Common.ItemPurgerUtils;
 
 import java.io.IOException;
 import java.nio.file.Files;

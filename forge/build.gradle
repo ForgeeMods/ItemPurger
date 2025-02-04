@@ -7,6 +7,12 @@ architectury {
     forge()
 }
 
+base {
+    archivesName = "${archives_name}-forge"
+}
+
+version = "${mod_version}+${minecraft_version}"
+
 configurations {
     common {
         canBeResolved = true

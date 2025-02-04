@@ -1,4 +1,4 @@
-package com.github.ImagineForgee.ItemPurger;
+package com.github.ImagineForgee.ItemPurger.Common;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;

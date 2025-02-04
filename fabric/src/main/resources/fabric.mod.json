@@ -26,6 +26,7 @@
     "fabric-api": "*"
   },
   "suggests": {
+    "quilt_loader": "*",
     "quilted_fabric_api": "*"
   }
 }

@@ -1,7 +1,7 @@
-package com.github.ImagineForgee.ItemPurger;
+package com.github.ImagineForgee.ItemPurger.Common;
 
-import com.github.ImagineForgee.ItemPurger.Config.ConfigData;
-import com.github.ImagineForgee.ItemPurger.Config.ConfigManager;
+import com.github.ImagineForgee.ItemPurger.Common.Config.ConfigData;
+import com.github.ImagineForgee.ItemPurger.Common.Config.ConfigManager;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;

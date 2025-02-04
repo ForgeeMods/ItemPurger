@@ -6,11 +6,22 @@ architectury {
     platformSetupLoomIde()
     fabric()
 }
+base {
+    archivesName = "${archives_name}-fabric"
+}
+
+version = "${mod_version}+${minecraft_version}"
+
+group = 'com.github.ImagineForgee'
 
 repositories {
     maven {
+        url "https://maven.fabricmc.net/"
+    }
+    maven {
         url "https://maven.quiltmc.org/repository/release/"
     }
+    mavenCentral()
 }
 
 configurations {
@@ -21,9 +32,8 @@ configurations {
     compileClasspath.extendsFrom common
     runtimeClasspath.extendsFrom common
     developmentFabric.extendsFrom common
+    developmentQuilt.extendsFrom common
 
-    // Files in this configuration will be bundled into your mod using the Shadow plugin.
-    // Don't use the `shadow` configuration from the plugin itself as it's meant for excluding files.
     shadowBundle {
         canBeResolved = true
         canBeConsumed = false
@@ -32,9 +42,7 @@ configurations {
 
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
-
     modImplementation "net.fabricmc.fabric-api:fabric-api:$rootProject.fabric_api_version"
-
     modImplementation "dev.architectury:architectury-fabric:$rootProject.architectury_api_version"
 
     implementation 'com.electronwill.night-config:toml:3.6.4'
@@ -42,17 +50,20 @@ dependencies {
 
     include 'com.electronwill.night-config:toml:3.6.4'
     include 'com.electronwill.night-config:core:3.6.4'
+
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionFabric')
 }
 
 processResources {
     inputs.property 'version', project.version
+    inputs.property 'group', project.group
 
     filesMatching('fabric.mod.json') {
         expand version: project.version
     }
 }
+
 
 shadowJar {
     configurations = [project.configurations.shadowBundle]

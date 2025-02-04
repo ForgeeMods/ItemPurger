@@ -1,4 +1,4 @@
-package com.github.ImagineForgee.ItemPurger.Config;
+package com.github.ImagineForgee.ItemPurger.Common.Config;
 
 import java.util.ArrayList;
 import java.util.List;

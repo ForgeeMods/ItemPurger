@@ -1,0 +1,53 @@
+plugins {
+	id "org.quiltmc.loom" version "1.0.+"
+}
+
+base {
+	archivesName = "${archives_name}-quilt"
+}
+
+version = "${mod_version}+${minecraft_version}"
+group = maven_group
+
+repositories {
+	maven { url = "https://maven.quiltmc.org/repository/release" }
+	maven { url = "https://maven.fabricmc.net/" }
+	mavenLocal()
+}
+
+loom {
+	mods {
+		"${mod_id}" {
+			sourceSet("main")
+		}
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${minecraft_version}"
+	mappings loom.officialMojangMappings()
+
+	implementation project(":common")
+
+	modImplementation "org.quiltmc:quilt-loader:${quilt_loader_version}"
+	modImplementation "org.quiltmc:qsl:${qsl_version}"
+}
+
+processResources {
+	inputs.properties version: version, group: maven_group, quilt_loader_version: quilt_loader_version, minecraft_version: minecraft_version
+
+	filesMatching('quilt.mod.json') {
+		expand version: version, group: maven_group, mod_id: mod_id, quilt_loader_version: quilt_loader_version, minecraft_version: minecraft_version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.encoding = 'UTF-8'
+	it.options.release = 21
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
+	withSourcesJar()
+}

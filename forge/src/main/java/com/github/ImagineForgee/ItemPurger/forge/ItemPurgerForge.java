@@ -1,9 +1,8 @@
 package com.github.ImagineForgee.ItemPurger.forge;
 
-import com.github.ImagineForgee.ItemPurger.ItemPurger;
+import com.github.ImagineForgee.ItemPurger.Common.ItemPurger;
 import dev.architectury.platform.forge.EventBuses;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
